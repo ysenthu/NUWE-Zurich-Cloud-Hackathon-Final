@@ -56,3 +56,32 @@ resource "aws_autoscaling_group" "asg" {
   }
 }
 
+
+# Auto Scaling Policy
+resource "aws_autoscaling_policy" "scale_up" {
+  name                   = "asg-scale-up"
+  autoscaling_group_name = aws_autoscaling_group.asg.name
+  policy_type            = "TargetTrackingScaling"
+  estimated_instance_warmup = 300
+
+  target_tracking_configuration {
+    predefined_metric_specification {
+      predefined_metric_type = "ASGAverageCPUUtilization"
+    }
+    target_value = 75.0
+  }
+}
+
+resource "aws_autoscaling_policy" "scale_down" {
+  name                   = "asg-scale-down"
+  autoscaling_group_name = aws_autoscaling_group.asg.name
+  policy_type            = "TargetTrackingScaling"
+  estimated_instance_warmup = 300
+
+  target_tracking_configuration {
+    predefined_metric_specification {
+      predefined_metric_type = "ASGAverageCPUUtilization"
+    }
+    target_value = 25.0
+  }
+}

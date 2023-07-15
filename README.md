@@ -1,5 +1,5 @@
 # NUWE-Zurich-Cloud-Hackathon-Final
-This project provides a modularized infrastructure setup for deploying a scalable web application using AWS, Terraform and Jenkins. The infrastructure includes EC2 instances, an Auto Scaling Group (ASG), an Internet-facing Network Load Balancer (NLB) and an S3 bucket for storing build artifacts and store images uploaded by agents. Each environment specific configuration is stored separately to ensure easy management and control over the setup for different stages (like development, testing, production, etc.).
+This project provides a modularized infrastructure setup for deploying a scalable web application using AWS, Terraform and Jenkins. The infrastructure includes EC2 instances, an Auto Scaling Group (ASG), an Internet-facing Network Load Balancer (NLB) and an S3 bucket for storing build artifacts and store images uploaded by agents. Each environment specific configuration is stored separately to ensure easy management and control over the setup for different stages (like local, dev, prod, etc.).
 
 ## Project Structure
 
@@ -46,5 +46,5 @@ The Jenkins pipeline is configured to automatically loop through all the environ
 
 # Report
 
-Report regards to the project can be found at docs/report.pdf
+Report regards to the project can be found at report.pdf
 
