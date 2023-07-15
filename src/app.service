@@ -1,0 +1,14 @@
+[Unit]
+Description=Zurich app
+After=network.target
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/opt/app
+Environment="Bucket_Name=REPLACED"
+ExecStart=/usr/local/bin/flask run --host=0.0.0.0 --port=443
+
+
+[Install]
+WantedBy=multi-user.target
