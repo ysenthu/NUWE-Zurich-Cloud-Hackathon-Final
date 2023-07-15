@@ -26,7 +26,7 @@ def upload():
     image = request.files['image']
 
     # Store image in S3 bucket
-    s3_client.upload_fileobj(image, Bucket_Name, "v1"+image.filename)
+    s3_client.upload_fileobj(image, Bucket_Name, "v1/"+image.filename)
 
     return 'Image upload successfully'
 
