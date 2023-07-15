@@ -13,7 +13,7 @@ resource "aws_security_group" "sg" {
     }
   }
   dynamic "egress" {
-    for_each = var.ingress_rules
+    for_each = var.egress_rules
     content {
       from_port   = egress.value["from_port"]
       to_port     = egress.value["to_port"]
